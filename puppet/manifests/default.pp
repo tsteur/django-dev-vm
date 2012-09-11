@@ -84,13 +84,13 @@ class { 'nginx':
 exec { 'create_django_project':
     command => "django-admin.py startproject ${project_name} ${django_dir}",
     creates => "${django_dir}/manage.py",
-    require => [ Package['Django'], Package['django-grappelli'], Package['pil'], Package['python-flup'] ]
+    require => [ Package['Django'], Package['django-grappelli'], Package['python-imaging'], Package['python-flup'] ]
 }
 
 exec { 'run_django_fcgi':
   cwd     => $django_dir,
   command => 'sudo python ./manage.py runfcgi host=127.0.0.1 port=8080',
-  require => [ Package['Django'], Package['django-grappelli'], Package['pil'], Package['python-flup'], Exec['create_django_project'] ]
+  require => [ Package['Django'], Package['django-grappelli'], Package['python-imaging'], Package['python-flup'], Exec['create_django_project'] ]
 }
 
 nginx::resource::vhost { $django_url:
