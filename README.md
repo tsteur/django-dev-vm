@@ -23,8 +23,9 @@ If you don't place an existing project within `django_dir`, it'll create a new p
  4. It'll take some time when executing this command the first time. It'll download the Vagrant base box once and install all required packages afterwards.
  5. Log in to your VM via `vagrant ssh`. 
  6. Make sure `djangoproject/djangoproject/settings.py` matches your database connection settings
- 7. Next execute `python manage.py syncdb` and maybe `python ./manage.py collectstatic` within your Django project folder
- 8. Don't forget to update your local hosts file. `192.168.33.20 djangoproject.local`
+ 7. Next execute `python manage.py syncdb` and `python ./manage.py collectstatic` within your Django project folder
+ 8. Start the development web server `cd ~/djangoproject && sudo python manage.py runserver djangoproject.local:80`
+ 9. Don't forget to update your local hosts file. `192.168.33.20 djangoproject.local`
 
 ### Installed Packages
  * Ubuntu Precise 64 Bit (12.04)
