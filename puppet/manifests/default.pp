@@ -66,7 +66,7 @@ package {
 }
 
 package {
-  ['Django', 'django-grappelli']:
+  ['Django', 'django-grappelli', 'django_evolution', 'johnny-cache', 'django-tastypie']:
     ensure   => latest,
     provider => pip,
     require  => [ Package['python-pip'], Package['python-setuptools'] ],
