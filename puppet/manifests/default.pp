@@ -54,7 +54,19 @@ package {
 }
 
 package {
-  ['Django', 'django-grappelli', 'pil']:
+  ['libjpeg8', 'libjpeg-dev', 'libfreetype6', 'libfreetype6-dev']:
+    ensure   => latest,
+    require  => Exec['make_update'];
+}
+
+package {
+  ['python-imaging']:
+    ensure   => latest,
+    require  => Package['libjpeg8', 'libjpeg-dev', 'libfreetype6', 'libfreetype6-dev'];
+}
+
+package {
+  ['Django', 'django-grappelli']:
     ensure   => latest,
     provider => pip,
     require  => [ Package['python-pip'], Package['python-setuptools'] ],
