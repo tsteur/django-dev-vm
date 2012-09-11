@@ -14,13 +14,13 @@ You can customize the following parameters in Vagrantfile:
  * `db_name` => Defaults to `django`
  * `db_root_password` => Defaults to `secure`
 
-If you don't place an existing project within $django_dir, it'll create a new project.
+If you don't place an existing project within `django_dir`, it'll create a new project.
 
 ### Installation
  1. Install [Vagrant](http://www.vagrantup.com) & [VirtualBox](https://www.virtualbox.org)
  2. Clone this repository including all submodules (`git clone --recursive https://github.com/tsteur/django-dev-vm.git`)
  3. Execute the command `vagrant up` 
- 4. It'll take some time when executing this command the first time. It'll download the Vagrant base box once and install all required packages.
+ 4. It'll take some time when executing this command the first time. It'll download the Vagrant base box once and install all required packages afterwards.
  5. Log in to your VM via `vagrant ssh`. Next execute `python manage.py syncdb` and maybe `python ./manage.py collectstatic` within your Django project folder
  6. Don't forget to update your local hosts file. `192.168.33.20 djangoproject.local`
 
