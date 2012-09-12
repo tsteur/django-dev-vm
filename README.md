@@ -37,3 +37,4 @@ If you don't place an existing project within `django_dir`, it'll create a new p
 
 ### Dependencies
 * puppetlabs-mysql - https://github.com/puppetlabs/puppetlabs-mysql
+* puppetlabs-stdlib - https://github.com/puppetlabs/puppetlabs-stdlib
