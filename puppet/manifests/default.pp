@@ -72,7 +72,6 @@ package {
     require  => [ Package['python-pip'], Package['python-setuptools'] ],
 }
 
-# Setup NGINX
 host { $django_url:
-  ip => '127.0.0.1';
+  ip => $ipaddress_eth1;
 }
