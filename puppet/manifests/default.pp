@@ -48,7 +48,7 @@ package {
 }
 
 package {
-  ['python-pip', 'python-software-properties', 'python-setuptools', 'python-dev', 'build-essential', 'python-flup']:
+  ['python-pip', 'python-software-properties', 'python-setuptools', 'python-memcache', 'python-dev', 'build-essential', 'python-flup']:
     ensure   => latest,
     require  => Exec['make_update'];
 }
