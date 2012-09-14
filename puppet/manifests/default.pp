@@ -71,6 +71,12 @@ package {
     provider => pip,
     require  => [ Package['python-pip'], Package['python-setuptools'] ],
 }
+	
+exec { 'run_django_fcgi':
+  cwd     => $django_dir,
+  command => 'sudo python ./manage.py runfcgi host=127.0.0.1 port=8080',	  	
+  require => [ Package['Django'], Package['django-grappelli'], Package['python-imaging'], Package['python-flup'], Exec['create_django_project'] ]
+}
 
 host { $django_url:
   ip => $ipaddress_eth1;
