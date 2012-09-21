@@ -31,7 +31,8 @@ If you don't place an existing project within `django_dir`, it'll create a new p
  * Ubuntu Precise 64 Bit (12.04)
  * MySQL + Percona Toolkit
  * Memcached
- * Python including Django, Grappelli, Johnny Cache, Pil, django-tastypie and django-evolution
+ * Python including Django, Grappelli, Johnny Cache, Pil, django-tastypie, django-evolution, django-debug-toolbar and django-snippetscream
+ * apache2-utils
  * Subversion
  * Git
 
