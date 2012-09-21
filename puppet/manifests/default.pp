@@ -54,6 +54,12 @@ package {
 }
 
 package {
+    'apache2-utils':
+    ensure   => latest,
+    require  => Exec['make_update'];
+}
+
+package {
   ['libjpeg8', 'libjpeg-dev', 'libfreetype6', 'libfreetype6-dev']:
     ensure   => latest,
     require  => Exec['make_update'];
@@ -71,7 +77,14 @@ package {
     provider => pip,
     require  => [ Package['python-pip'], Package['python-setuptools'] ],
 }
-	
+
+package {
+  ['django-debug-toolbar', 'django-snippetscream']:
+    ensure   => latest,
+    provider => pip,
+    require  => [ Package['python-pip'], Package['python-setuptools'] ],
+}
+
 exec { 'create_django_project':
     command => "django-admin.py startproject ${project_name} ${django_dir}",
     creates => "${django_dir}/manage.py",	  	
